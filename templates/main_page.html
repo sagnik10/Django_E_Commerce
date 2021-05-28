@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main page</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    
+
+    <style>
+    @import url(https://fonts.googleapis.com/css?family=Exo:100);
+* {margin: 0; padding: 0; border: 0 none;}
+html, body {height: 100%; width: 100%; font-size: 1rem; font-family: 'Exo', sans-serif; font-weight: 100;}
+.cont-slider {
+    position: relative;
+    height: 100%;
+    max-height: 100vh;
+    width: auto;
+    min-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.slider {
+    animation: sliding 25s ease-out 0s backwards infinite;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 500%;
+    height: 100%;
+}
+.slide {
+    display: inline-block;
+    position: relative;
+    width: 20%;
+    height: 100%;    
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+.slide span {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 0 5vh 5vh 0;
+    color: #FFF;
+    position: absolute;
+    left: 0;
+    top: 40vh;
+    font-size: 20vh;
+    line-height: 20vh;
+    border: 1px solid rgba(255,255,255,.45);
+    border-left: 0 none;
+}
+.one {
+  background-image: url(https://drive.google.com/uc?export=download&id=1HiXp66W9IeOPslOw2wKLkTjFGVrtP9yO);}
+.two {
+  background-image: url(https://drive.google.com/uc?export=download&id=1LJRVoxSJBu6OHtqaEp-2zXWtC8spNDI7);}
+.three {
+  background-image: url(https://drive.google.com/uc?export=download&id=1UR-8zvSM4TC_dUmpoxunLWGintBt6pZu);}
+.four {
+  background-image: url(https://drive.google.com/uc?export=download&id=17_XbfMFFP9bE6qTL8OZGFqN2rsyJYjQP);}
+.five {
+  background-image: url(https://drive.google.com/uc?export=download&id=1FoQvt0MjYkDHkZeXNWTUz0y68Fpk1U1o);}
+
+@keyframes sliding {
+  0% {left: 0%; }
+  15% {left: 0%; }
+  20% {left: -100%; }
+  35% {left: -100%; }
+  40% {left: -200%; }  
+  55% {left: -200%; }
+  60% {left: -300%; }
+  75% {left: -300%; }
+  80% {left: -400%; }
+  95% {left: -400%; }   
+  100% {left: 0; }
+}
+
+.wrapper {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #f5f5f5;
+}
+.wrapper > :first-child {
+  margin-top: 0;
+}
+.wrapper > :last-child {
+  margin-bottom: 0;
+}
+
+.desc {
+  margin: 4em auto;
+  font-size: 1.2em;
+}
+
+.todo {
+  background: #f9f9f9;
+  padding: 1em;
+  border-radius: 4px;
+  color: #ccc;
+  font-style: italic;
+  font-weight: lighter;
+  font-size: 0.9em;
+}
+.todo ul {
+  margin: 0.4em 0;
+  padding: 0 1em;
+}
+.todo ul li {
+  list-style-position: inside;
+}
+
+h1 {
+  margin: 0;
+}
+
+footer {
+  margin: 4em auto;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+a {
+  text-decoration: none;
+  color: #2196F3;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.emoticon-face {
+  background: #FFEB3B;
+  border-radius: 100%;
+  width: 1.7em;
+  height: 1.7em;
+  transform: rotate(90deg);
+  display: inline-block;
+  vertical-align: middle;
+  line-heigh: 1;
+  margin: -0.4em 0.2em 0;
+  text-align: center;
+  border: 1px solid #FDD835;
+  padding-left: 0.1em;
+  -webkit-font-smoothing: antialiased;
+}
+.emoticon-face--no-rotation {
+  transform: rotate(0deg);
+}
+
+code {
+  padding: 0.2em 0.3em;
+  background: #f5f5f5;
+  margin: 0 0.2em;
+  border-radius: 4px;
+  font-size: 0.95em;
+  font-family: "Source Code Pro";
+}
+
+.tac {
+  text-align: center;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #777;
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+.product-grid {
+  width: 95%;
+  margin: 2rem auto;
+}
+.product-grid.product-grid--flexbox .product-grid__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.product-grid.product-grid--flexbox .product-grid__title {
+  height: auto;
+}
+.product-grid.product-grid--flexbox .product-grid__title:after {
+  display: none;
+}
+.product-grid__wrapper {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+.product-grid__product-wrapper {
+  padding: 1rem;
+  float: left;
+  width: 33.33333%;
+}
+.product-grid__product {
+  padding: 1rem;
+  position: relative;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 4px;
+}
+.product-grid__product:hover {
+  box-shadow: 0px 0px 0px 1px #eee;
+  z-index: 50;
+}
+.product-grid__product:hover .product-grid__extend {
+  display: block;
+}
+.product-grid__img-wrapper {
+  width: 100%;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  height: 150px;
+}
+.product-grid__img {
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+.product-grid__title {
+  margin-top: 0.875rem;
+  display: block;
+  font-size: 1.125em;
+  color: #222;
+  height: 3em;
+  overflow: hidden;
+  position: relative;
+}
+.product-grid__title:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 2.4em;
+  height: 1.5em;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%);
+}
+.product-grid__price {
+  color: #E91E63;
+  font-weight: bold;
+  letter-spacing: 0.4px;
+}
+.product-grid__extend-wrapper {
+  position: relative;
+}
+.product-grid__extend {
+  display: none;
+  position: relative;
+  padding: 0 1rem 1rem 1rem;
+  margin: 0.4375rem -1rem 0;
+  box-shadow: 0px 0px 0px 1px #eee;
+  background: #fff;
+  border-radius: 0 0 4px 4px;
+}
+.product-grid__extend:before {
+  content: "";
+  height: 0.875rem;
+  width: 100%;
+  position: relative;
+  top: -0.4375rem;
+  left: 0;
+  background: #fff;
+}
+.product-grid__description {
+  font-size: 0.875em;
+  margin-top: 0.4375rem;
+  margin-bottom: 0;
+}
+.product-grid__btn {
+  display: inline-block;
+  font-size: 0.875em;
+  color: #777;
+  background: #eee;
+  padding: 0.5em 0.625em;
+  margin-top: 0.875rem;
+  margin-right: 0.625rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.product-grid__btn i.fa {
+  margin-right: 0.3125rem;
+}
+.product-grid__add-to-cart {
+  color: #fff;
+  background: #E91E63;
+}
+.product-grid__add-to-cart:hover {
+  background: #ee4c83;
+}
+.product-grid__view {
+  color: #777;
+  background: #eee;
+}
+.product-grid__view:hover {
+  background: white;
+}
+.featurette-divider {
+  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+.site-footer {
+  margin-top: 100px; /* Remove */
+	position: relative;
+	background-color:#1A1F24;
+	width: 100%;	
+	bottom: 0; 
+}
+
+.site-footer .container {
+	max-width: 85%;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	padding-top: 20px;
+}
+
+.site-footer .container h1 {
+	font-size: 40px;
+}
+
+.site-footer .container h2 {
+	font-size: 40px;
+	float: right;
+}
+
+.site-footer .grid-container a {
+	color: #A2845C;
+	text-decoration: none;
+	font-size: 15px;
+	line-height: 16.25px;
+}
+
+.site-footer .grid-item {
+	padding: 10px;
+	color: #A2845C;
+}
+
+
+.site-footer .grid-container .inner-grid-container {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	text-align: left;
+}
+
+.site-footer .container hr { 
+	display: block; 
+	height: 1px;
+	border: 0; border-top: 1px solid #A2845C;
+	margin: 1px; 
+	padding: 0; 
+}
+
+.site-footer .container p {
+	font-size: 14px;
+	text-align: right;
+	color: #A2845C;
+	font-weight: 500;
+}
+
+.site-footer .container .logo-img {
+	width: 180px;
+	height: 140px;
+	cursor: pointer;
+}
+
+.site-footer .grid-container .grid-item .social-buttons {
+	padding-top: 20px;
+}
+
+.site-footer .grid-container .grid-item .social-buttons a {
+	display: inline-flex;
+	text-decoration: none;
+	font-size: 30px;
+	width: 60px;
+	height: 60px;
+	color: #1A1F24;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	margin: 0 8px;
+}
+
+
+.site-footer .grid-container .grid-item .social-buttons a i{
+	transition: 0.3s ease-in;
+}
+
+.site-footer .grid-container .grid-item .social-buttons a:hover i {
+	background: linear-gradient(45deg,#A2845C,#A2845C);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	transform: scale(1.5);
+}
+
+.circle-icon {
+    background: #A2845C;
+    padding:12px;
+    border-radius: 50%;
+}
+
+
+
+/*------------------------------------------------------------------
+[ Screen Sizes] */
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+	.site-footer {
+		height: 620px;
+		bottom: 0; 
+	}
+
+	.site-footer .grid-container {
+		display: grid;
+		grid-template-columns: 400px;
+	}
+
+	.site-footer .grid-container .inner-grid-container {
+		display: grid;
+		grid-template-columns: auto auto ;
+		text-align: left;
+	}
+
+
+}
+
+/*========================================================*/
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+	.site-footer {
+		height: 260px;
+		bottom: 0;
+	}
+
+	.site-footer .grid-container {
+		display: grid;
+		grid-template-columns: 350px auto 350px;
+	}
+
+	.site-footer .grid-container .inner-grid-container{
+		display: grid;
+		grid-template-columns: auto auto auto auto;
+		text-align: left;
+	}
+
+}
+
+    </style>
+</head>
+
+<body>
+{% include "header.html" %}
+<header class="cont-slider">
+    <section class="slider">
+         <article class="slide one"><span> Phone</span></article><!--
+      --><article class="slide two"><span> Laptop</span></article><!--
+      --><article class="slide three"><span> Men's</span></article><!--
+      --><article class="slide four"><span> Women's</span></article><!--
+      --><article class="slide five"><span> Furnitures</span></article>
+    </section>
+</header>
+<br><br><br>
+<div>
+<span><b><h1 style="text-align: center;"> Mobiles & Laptops </h1></b></span><br><br>
+
+<div class="wrapper">
+	<div class="content">
+		<div class="product-grid product-grid--flexbox">
+			<div class="product-grid__wrapper">
+{% for items in item %}
+				<div class="product-grid__product-wrapper">
+					<div class="product-grid__product">
+						<div class="product-grid__img-wrapper">			
+							<img src="{{items.image.url}}" alt="Img" class="product-grid__img" />
+						</div>
+						<span class="product-grid__title" id="namepr{{items.id}}" >{{items.name}}</span>
+						<span class="product-grid__price" id="pricepr{{items.id}}" >{{items.price}}</span>
+						<div class="product-grid__extend-wrapper">
+							<div class="product-grid__extend">
+								<p class="product-grid__description">{{items.description}}</p>
+								<span id="pr{{items.id}}" class="product-grid__btn product-grid__add-to-cart cart"><i class="fa fa-cart-arrow-down"></i> Add to cart</span>				
+								<a href="/products/{{items.id}}"><span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i> View more</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+{% endfor %}
+			</div>		
+		</div>
+</div>
+  
+<hr class="featurette-divider">
+<div class="wrapper">
+	<div class="content">
+		<div class="product-grid product-grid--flexbox">
+			<div class="product-grid__wrapper">
+{% for items in laptops %}
+				<div class="product-grid__product-wrapper">
+					<div class="product-grid__product">
+						<div class="product-grid__img-wrapper">			
+							<img src="{{items.image.url}}" alt="Img" class="product-grid__img" />
+						</div>
+						<span class="product-grid__title" id="namelr{{items.id}}" >{{items.name}}</span>
+						<span class="product-grid__price" id="pricelr{{items.id}}" >{{items.price}}</span>
+						<div class="product-grid__extend-wrapper">
+							<div class="product-grid__extend">
+								<p class="product-grid__description">{{items.description}}</p>
+								<span id="lr{{items.id}}" class="product-grid__btn product-grid__add-to-cart cart"><i class="fa fa-cart-arrow-down"></i> Add to cart</span>			
+								<a href="/laptop/{{items.id}}"><span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i> View more</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+        {% endfor %}
+			</div>		
+		</div>
+	</div>
+</div>
+
+<span><b><h1 style="text-align: center;"> Men's </h1></b></span><br><br>
+<div class="wrapper">
+	<div class="content">
+		<div class="product-grid product-grid--flexbox">
+			<div class="product-grid__wrapper">
+{% for items in mens %}
+				<div class="product-grid__product-wrapper">
+					<div class="product-grid__product">
+						<div class="product-grid__img-wrapper">			
+							<img src="{{items.image.url}}" alt="Img" class="product-grid__img" />
+						</div>
+						<span class="product-grid__title" id="namemr{{items.id}}" >{{items.name}}</span>
+						<span class="product-grid__price" id="pricemr{{items.id}}" >{{items.price}}</span>
+						<div class="product-grid__extend-wrapper">
+							<div class="product-grid__extend">
+								<p class="product-grid__description">{{items.description}}</p>
+								<span id="mr{{items.id}}" class="product-grid__btn product-grid__add-to-cart cart"><i class="fa fa-cart-arrow-down"></i> Add to cart</span>				
+								<a href="/mens/{{items.id}}"><span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i> View more</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+        {% endfor %}
+			</div>		
+		</div>
+	</div>
+</div>
+<span><b><h1 style="text-align: center;"> Women's </h1></b></span><br><br>
+<div class="wrapper">
+	<div class="content">
+		<div class="product-grid product-grid--flexbox">
+			<div class="product-grid__wrapper">
+{% for items in womens %}
+				<div class="product-grid__product-wrapper">
+					<div class="product-grid__product">
+						<div class="product-grid__img-wrapper">			
+							<img src="{{items.image.url}}" alt="Img" class="product-grid__img" />
+						</div>
+						<span class="product-grid__title" id="namewr{{items.id}}" >{{items.name}}</span>
+						<span class="product-grid__price" id="pricewr{{items.id}}" >{{items.price}}</span>
+						<div class="product-grid__extend-wrapper">
+							<div class="product-grid__extend">
+								<p class="product-grid__description">{{items.description}}</p>
+								<span id="wr{{items.id}}" class="product-grid__btn product-grid__add-to-cart cart"><i class="fa fa-cart-arrow-down"></i> Add to cart</span>				
+								<a href="/womens/{{items.id}}"><span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i> View more</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+        {% endfor %}
+			</div>		
+		</div>
+	</div>
+</div>
+<span><b><h1 style="text-align: center;"> Furnitures </h1></b></span><br><br>
+<div class="wrapper">
+	<div class="content">
+		<div class="product-grid product-grid--flexbox">
+			<div class="product-grid__wrapper">
+{% for items in furnitures %}
+				<div class="product-grid__product-wrapper">
+					<div class="product-grid__product">
+						<div class="product-grid__img-wrapper">			
+							<img src="{{items.image.url}}" alt="Img" class="product-grid__img" />
+						</div>
+						<span class="product-grid__title" id="namefr{{items.id}}" >{{items.name}}</span>
+						<span class="product-grid__price" id="pricefr{{items.id}}" >{{items.price}}</span>
+						<div class="product-grid__extend-wrapper">
+							<div class="product-grid__extend">
+								<p class="product-grid__description">{{items.description}}</p>
+								<span id="fr{{items.id}}" class="product-grid__btn product-grid__add-to-cart cart"><i class="fa fa-cart-arrow-down"></i> Add to cart</span>				
+								<a href="/furnitures/{{items.id}}"><span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i> View more</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+        {% endfor %}
+			</div>		
+		</div>
+	</div>
+</div>
+</div>
+<footer class="site-footer">
+		<div class = "container">
+
+			<div class="grid-container">
+				<div class="grid-item">
+					
+					<img src = " " class = "logo-img">
+
+				</div>
+
+				<div class="grid-item inner-grid-container">
+					
+					<div class="grid-item"><a href="">About Us</a></div>   
+					<div class="grid-item"><a href="">Health and Social Care</a></div>   
+					<div class="grid-item"><a href="">Privacy Policy</a></div>   
+					<div class="grid-item"><a href="">Blog</a></div>   
+					<div class="grid-item"><a href="">Contact us</a></div>   
+					<div class="grid-item"><a href="">Finance</a></div>
+					<div class="grid-item"><a href="">Cookie Policy</a></div>   
+					<div class="grid-item"><a href="">Jobs</a></div>   
+
+
+				</div>
+
+				<div class="grid-item">
+					<div class = "social-buttons">
+						<a href= ""><i class="fab fa-instagram circle-icon"></i></a>
+						<a href= ""><i class="fab fa-facebook circle-icon"></i></a>
+						<a href= ""><i class="fab fa-linkedin-in circle-icon"></i></a>
+						<a href= ""><i class="fab fa-twitter circle-icon"></i></a>
+					</div>
+				</div>   
+			</div>
+			<hr>
+		</div>
+	</footer>
+<script>
+console.log('working');
+if(localStorage.getItem('cart') == null){
+var cart = {};
+}
+else
+{
+cart = JSON.parse(localStorage.getItem('cart'));
+}
+$('.cart').click(function(){
+console.log('clicked');
+var idstr = this.id.toString();
+console.log(idstr);
+if (cart[idstr] !=undefined){
+	qty = cart[idstr][0] + 1;
+}
+else
+{
+	qty = 1;
+    name = document.getElementById('name'+idstr).innerHTML
+	price = document.getElementById("price"+idstr).innerHTML
+    cart[idstr] = [qty, name, parseInt(price)];
+
+}
+console.log(cart);
+localStorage.setItem('cart', JSON.stringify(cart));
+document.getElementById('cart').innerHTML = Object.keys(cart).length;
+});
+</script>
+</body>
+
+</html>
